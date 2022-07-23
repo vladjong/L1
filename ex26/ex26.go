@@ -15,7 +15,9 @@ func main() {
 	mapMethod(str)
 }
 
-/*Сортируем и смотрим на дубликаты*/
+/*
+	Сортируем и смотрим на дубликаты
+*/
 func sortMethod(str string) {
 	r := []rune(str)
 	sort.Slice(r, func(i int, j int) bool { return r[i] < r[j] })
@@ -29,7 +31,9 @@ func sortMethod(str string) {
 	fmt.Println("First: false")
 }
 
-/*Map хранит только уникальные элементы*/
+/*
+	Map хранит только уникальные элементы
+*/
 func mapMethod(str string) {
 	runeMap := make(map[rune]bool)
 	for _, item := range str {

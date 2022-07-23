@@ -11,13 +11,17 @@ func main() {
 	third(a, b)
 }
 
-/*Средства языка*/
+/*
+	Средства языка
+*/
 func first(a int, b int) {
 	a, b = b, a
 	fmt.Println("First a:", a, "b:", b)
 }
 
-/*Матемачиские фокусы*/
+/*
+	Матемачиские фокусы
+*/
 func second(a int, b int) {
 	a += b
 	b = a - b
@@ -25,7 +29,9 @@ func second(a int, b int) {
 	fmt.Println("Second a:", a, "b:", b)
 }
 
-/*XOR*/
+/*
+	XOR
+*/
 func third(a int, b int) {
 	a = a ^ b
 	b = a ^ b

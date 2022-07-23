@@ -19,18 +19,28 @@ func main() {
 	fmt.Println("Changer array:", arr2)
 }
 
-/*Способ с изменением массива*/
+/*
+	Способ с изменением массива
+*/
 func deleteElementChangeOrder(pos int, arr []string) []string {
-	/*Меняем последний символ местами с pos*/
+	/*
+		Меняем последний символ местами с pos
+	*/
 	arr[pos] = arr[len(arr)-1]
-	/*Длеаем слайс по последнему элементуs*/
+	/*
+		Делаем слайс по последнему элементу
+	*/
 	arr = arr[:len(arr)-1]
 	return arr
 }
 
-/*Способ с сохранением порядка в массиве*/
+/*
+	Способ с сохранением порядка в массиве
+*/
 func deleteElementySaveOrder(pos int, arr []string) []string {
-	/*Делаем два слайса до pos и после, далее складываем их*/
+	/*
+		Делаем два слайса до pos и после, далее складываем их
+	*/
 	arr = append(arr[:pos], arr[pos+1:]...)
 	return arr
 }

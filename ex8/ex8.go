@@ -13,10 +13,14 @@ func main() {
 	var bitValue int64
 	fmt.Scan(&bitValue)
 	if bitValue == 1 {
-		/*Операция or true*/
+		/*
+			Операция or true
+		*/
 		number = number | (1 << bitPosition)
 	} else {
-		/*Операция xor true*/
+		/*
+			Операция xor true
+		*/
 		number = number ^ (1 << bitPosition)
 	}
 	fmt.Println("Result value:", number)

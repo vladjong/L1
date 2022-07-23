@@ -33,7 +33,9 @@ func generateSlice() []int {
 	return arr
 }
 
-/*Алгоритм бинарного поиска*/
+/*
+	Алгоритм бинарного поиска
+*/
 func binarySearch(arr []int, pattern int) int {
 	max, min := len(arr), 0
 	for i := 0; i < len(arr); i++ {

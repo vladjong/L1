@@ -17,7 +17,9 @@ func main() {
 	fmt.Println(str, "—", strP)
 }
 
-/*Метод двух указателей*/
+/*
+	Метод двух указателей
+*/
 func palindrom(strArr []string) string {
 	left, right := 0, len(strArr)-1
 	for left < right {

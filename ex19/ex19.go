@@ -10,9 +10,13 @@ func main() {
 	fmt.Println(str, "—", strP)
 }
 
-/*Метод двух указателей*/
+/*
+	Метод двух указателей
+*/
 func palindrom(str string) string {
-	/*Преобразуем строку в массив рун, чтобы работала с unicode*/
+	/*
+		Преобразуем строку в массив рун, чтобы работала с unicode
+	*/
 	strByte := []rune(str)
 	left, right := 0, len(strByte)-1
 	for left < right {
