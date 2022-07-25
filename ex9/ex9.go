@@ -14,15 +14,11 @@ func main() {
 	writeNumber := make(chan int)
 	readNumber := make(chan int)
 	/*
-		Иницилизируем мьютекс, чтобы считать число из массива arr
-	*/
-	var mu sync.Mutex
-	/*
 		Иницилизируем waitGroup для синхронной работы горутин
 	*/
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
-	go readArray(writeNumber, &mu, arr)
+	go readArray(writeNumber, arr)
 	go multiply(writeNumber, readNumber)
 	go read(readNumber, wg)
 	wg.Wait()
@@ -31,11 +27,9 @@ func main() {
 /*
 	Функция чтения чисел из массива и записи в writeNumber канал
 */
-func readArray(writeNumber chan int, mu *sync.Mutex, arr []int) {
+func readArray(writeNumber chan int, arr []int) {
 	for _, val := range arr {
-		mu.Lock()
 		writeNumber <- val
-		mu.Unlock()
 	}
 	/*
 		Закрываем канал, после того как прочитали все данные из массива
